@@ -50,11 +50,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Set up WebDriverManager
+      - name: Install dependencies
         run: |
-         curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-         sudo apt-get install -y nodejs
-         npm install webdriver-manager
+          python -m pip install --upgrade pip
+          pip install -r requirements1.txt
 
       - name: Run Selenium tests
         run: |
