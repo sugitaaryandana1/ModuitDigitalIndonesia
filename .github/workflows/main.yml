@@ -52,7 +52,7 @@ jobs:
         
       - name: Install chromedriver manager
         run: |
-          pip install chromedriver_manager
+          npm install chromedriver_manager
         
       - name: Run Selenium tests
         run: |
