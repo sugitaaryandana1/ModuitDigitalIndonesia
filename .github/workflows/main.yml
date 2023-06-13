@@ -57,7 +57,6 @@ jobs:
           unzip chromedriver_mac64.zip
           rm chromedriver_mac64.zip
           chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
         
       - name: Run Selenium tests
         run: |
