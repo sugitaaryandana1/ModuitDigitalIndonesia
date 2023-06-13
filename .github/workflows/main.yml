@@ -56,6 +56,9 @@ jobs:
          
       - name: Install WebDriverManager dependencies
         run: mvn dependency:resolve
+        
+      - name: Run tests with WebDriverManager
+        run: mvn test
 
       - name: Run Selenium tests
         run: |
