@@ -50,10 +50,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
           
-      - name: Install Chrome and Chromedriver
+      - name: Install Chrome
+        run: sudo apt-get update && sudo apt-get install google-chrome-stable -y
+
+      - name: Install Chromedriver
         run: |
-          sudo apt-get install -y chromium-chromedriver
-          sudo ln -s /usr/lib/chromium-browser/chromedriver
+          CHROME_DRIVER_VERSION=`google-chrome-stable --version | awk -F '[ .]' '{print $4"."$5"."$6}'`
+          wget -N https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip -P ~/
+          unzip ~/chromedriver_linux64.zip -d ~/
+          rm ~/chromedriver_linux64.zip
+          sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
+          sudo chown root:root /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
         
       - name: Run Selenium tests
         run: |
