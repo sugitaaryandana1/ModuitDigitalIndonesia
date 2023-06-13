@@ -50,13 +50,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Chromedriver
-        run: |
-          LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          curl -O "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip"
-          unzip chromedriver_mac64.zip
-          rm chromedriver_mac64.zip
-          chmod +x chromedriver
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+         node-version: '16.16.0'
+      - name: Install 
+        run: npm ci
         
       - name: Run Selenium tests
         run: |
