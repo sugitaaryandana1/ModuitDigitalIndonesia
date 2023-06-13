@@ -6,8 +6,8 @@ Task result for TAKE HOME TEST
 3. after success you follow step by step you can run query "pyhton3 yourfilename.py"
 
 # ScreenShot Automation Selenium
-<img width="1430" alt="image" src="https://github.com/sugitaaryandana1/ModuitDigitalIndonesia/assets/107387702/70faa170-d0f9-4fee-8f97-2bac864e12cb">
-<img width="1429" alt="image" src="https://github.com/sugitaaryandana1/ModuitDigitalIndonesia/assets/107387702/4b3375b4-1376-4cf7-9312-58e58f4ee4cb">
+1. <img width="1430" alt="image" src="https://github.com/sugitaaryandana1/ModuitDigitalIndonesia/assets/107387702/70faa170-d0f9-4fee-8f97-2bac864e12cb">
+2. <img width="1429" alt="image" src="https://github.com/sugitaaryandana1/ModuitDigitalIndonesia/assets/107387702/4b3375b4-1376-4cf7-9312-58e58f4ee4cb">
 
 
 
