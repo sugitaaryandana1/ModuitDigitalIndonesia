@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "5787f810-1836-499b-b46d-9320e8a7c464",
+		"name": "API Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "736780"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//status code",
+							"pm.test(\"status code is 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"//header present",
+							"pm.test(\"Response time is less than 700ms\", () => {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"});",
+							"",
+							"//type data",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test Data type of the response\", () =>{",
+							"    pm.expect(jsonData.name).to.be.a(\"string\");",
+							"    pm.expect(jsonData.job).to.be.a(\"string\");",
+							"    pm.expect(jsonData.id).to.be.a(\"string\");",
+							"    pm.expect(jsonData.createdAt).to.be.a(\"string\");",
+							"});",
+							"",
+							"var schema={",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"name\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"job\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"id\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"createdAt\": {",
+							"      \"type\": \"string\"",
+							"    }",
+							"  },",
+							"  \"required\": [",
+							"    \"name\",",
+							"    \"job\",",
+							"    \"id\",",
+							"    \"createdAt\"",
+							"  ]",
+							"}",
+							"pm.test('schema is valid', function(){",
+							"    pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"sugita\",\n    \"job\": \"testing\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//status code",
+							"pm.test(\"status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//header present",
+							"pm.test(\"Response time is less than 500ms\", () => {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"//type data",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test Data type of the response\", () =>{",
+							"    pm.expect(jsonData.data.id).to.be.a(\"number\");",
+							"    pm.expect(jsonData.data.email).to.be.a(\"string\");",
+							"});",
+							"",
+							"var schema={",
+							"  \"$schema\": \"https://reqres.in/api/users/2\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"id\": {",
+							"      \"type\": \"number\"",
+							"    },",
+							"    \"email\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"first_name\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"last_name\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"avatar\": {",
+							"      \"type\": \"string\"",
+							"    }",
+							"  },",
+							"  \"required\": [",
+							"    \"id\",",
+							"    \"email\",",
+							"    \"first_name\",",
+							"    \"last_name\",",
+							"    \"avatar\"",
+							"  ]",
+							"}",
+							"pm.test('schema is valid', function(){",
+							"    pm.expect(tv4.validate(jsonData.data, schema)).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cityslicka",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eve.holt@reqres.in",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//status code",
+							"pm.test(\"status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//header present",
+							"pm.test(\"Response time is less than 500ms\", () => {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"//type data",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test Data type of the response\", () =>{",
+							"    pm.expect(jsonData.name).to.be.a(\"string\");",
+							"    pm.expect(jsonData.job).to.be.a(\"string\");",
+							"    pm.expect(jsonData.updatedAt).to.be.a(\"string\");",
+							"});",
+							"",
+							"var schema={",
+							"  \"$schema\": \"https://reqres.in/api/users/2\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"name\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"job\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"updatedAt\": {",
+							"      \"type\": \"string\"",
+							"    }",
+							"  },",
+							"  \"required\": [",
+							"    \"name\",",
+							"    \"job\",",
+							"    \"updatedAt\"",
+							"  ]",
+							"}",
+							"pm.test('schema is valid', function(){",
+							"    pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cityslicka",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eve.holt@reqres.in",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"moduit\",\n    \"job\": \"zion resident\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//status code",
+							"pm.test(\"status code is 204\", () => {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							"//header present",
+							"pm.test(\"Response time is less than 500ms\", () => {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cityslicka",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eve.holt@reqres.in",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
