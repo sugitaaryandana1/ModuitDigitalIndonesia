@@ -50,10 +50,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Install chromedriver manager
+      - name: Install ChromeDriver
         run: |
-          npm install chromedriver_manager
-        
+         python -m pip install chromedriver-autoinstaller
+
       - name: Run Selenium tests
         run: |
           python checkout.py
