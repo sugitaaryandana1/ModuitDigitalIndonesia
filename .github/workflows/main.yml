@@ -50,15 +50,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Install ChromeDriver
+      - name: Set up WebDriverManager
         run: |
-         python -m pip install chromedriver-autoinstaller
-         
-      - name: Install WebDriverManager dependencies
-        run: mvn dependency:resolve
-        
-      - name: Run tests with WebDriverManager
-        run: mvn test
+         curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+         sudo apt-get install -y nodejs
+         npm install webdriver-manager
 
       - name: Run Selenium tests
         run: |
