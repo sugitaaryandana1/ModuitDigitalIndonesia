@@ -53,7 +53,7 @@ jobs:
       - name: Install Chrome and Chromedriver
         run: |
           sudo apt-get install -y chromium-chromedriver
-          sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
+          sudo ln -s /usr/lib/chromium-browser/chromedriver
         
       - name: Run Selenium tests
         run: |
