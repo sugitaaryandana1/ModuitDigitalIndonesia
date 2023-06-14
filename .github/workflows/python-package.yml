@@ -59,3 +59,9 @@ jobs:
     - name: Run Login
       run: |
         python3 login.py
+    - name: Run Remove Chart
+      run: |
+        python3 removechart.py
+    - name: Run Search Product
+      run: |
+        python3 searchproduct.py
