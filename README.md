@@ -1,6 +1,6 @@
 # ModuitDigitalIndonesia
 Task result for TAKE HOME TEST
-# Guide Check Workflow
+# Guide Check Workflow Integrated Automation Postman and UI Test
 1. search directory .github/workflows
 2. click file python-package.yml
 3. click viewruns
