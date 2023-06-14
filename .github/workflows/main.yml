@@ -60,7 +60,7 @@ jobs:
           LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
           wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
           unzip chromedriver_mac64.zip
-          sudo mv chromedriver /ModuitDigitalIndonesia
+          sudo mv chromedriver /opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages
           chromedriver --version
           
       - name: Run Python tests
