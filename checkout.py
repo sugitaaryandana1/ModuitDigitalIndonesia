@@ -4,7 +4,7 @@ import time
 
 
 # Main Function
-if __name__ == '__main__':
+if __name__ == '__main__' :
 
 	options = webdriver.ChromeOptions()
 	options.add_argument("--start-maximized")
