@@ -13,10 +13,9 @@ if __name__ == '__main__':
 
 	# Provide the path of chromedriver present on your system.
 	# driver = webdriver.Chrome(ChromeDriverManager().install())
-	# driver = webdriver.Chrome()
+	driver = webdriver.Chrome()
 	# driver = webdriver.Chrome(executable_path="/opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages/chromedrive", chrome_options=options)
 	# driver = webdriver.Chrome('/opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages/chromedrive')
-	driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 	driver.set_window_size(480,360)
 	driver.maximize_window()
 
