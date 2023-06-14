@@ -37,7 +37,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics    
     - name: Install Chrome
       run: |
-        sudo apt install google-chrome-stable
+        brew install --cask google-chrome
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
