@@ -60,9 +60,9 @@ jobs:
           export PATH=$PATH:/usr/lib/chromium-browser/
           python checkout.py
 
-      - name: Run Selenium tests
-        run: |
-          python -m checkout.py
+#       - name: Run Selenium tests
+#         run: |
+#           python -m checkout.py
           
 #       - name: Run WebDriver Manager
 #         run: |
