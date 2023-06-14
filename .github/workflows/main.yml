@@ -76,8 +76,3 @@ jobs:
 #       - name: Run Selenium tests
 #         run: |
 #          python -m checkout.py
-          
-#       - name: Run WebDriver Manager
-#         run: |
-#           # Install WebDriver Manager
-#           npm install -g webdriver-manager
