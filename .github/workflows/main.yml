@@ -50,7 +50,7 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: pytest python login.py
+        run: pytest login.py
           
 #       - name: Install dependencies
 #         run: |
