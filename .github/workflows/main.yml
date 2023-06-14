@@ -50,10 +50,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Install dependencies
+      - name: Install Chromium and Chromedriver
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements1.txt
+          sudo apt-get update
+          sudo apt-get install chromium-chromedriver
+          
+      - name: Run Python tests
+        run: |
+          export PATH=$PATH:/usr/lib/chromium-browser/
+          python checkout.py
 
       - name: Run Selenium tests
         run: |
