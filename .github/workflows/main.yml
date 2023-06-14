@@ -50,7 +50,7 @@ jobs:
       - name: execute py script # run main.py
         run: |
           ls
-          pytest
+          pytest checkout.py
           
 #       - name: Install dependencies
 #         run: |
