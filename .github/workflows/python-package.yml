@@ -47,6 +47,9 @@ jobs:
     - name: Install chrome driver
       run: |
         brew install cask chromedriver
-    - name: Run
+    - name: Run Checkout
       run: |
         python3 checkout.py
+    - name: Run Login
+      run: |
+        python3 login.py
