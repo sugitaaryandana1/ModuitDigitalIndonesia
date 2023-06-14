@@ -71,7 +71,7 @@ jobs:
       - name: Run Python tests
         run: |
           ls
-          python3 checkout.py
+          python3 -m unittest discover checkout
 
 #       - name: Run Selenium tests
 #         run: |
