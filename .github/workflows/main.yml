@@ -55,23 +55,23 @@ jobs:
 #           sudo apt-get update
 #           sudo apt-get install chromium-chromedriver
 
-#       - name: Set up ChromeDriver
-#         run: |
-#           LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
-#           wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
-#           unzip chromedriver_mac64.zip
-#           sudo mv chromedriver /opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages
-#           chromedriver --version
-
-      - name: Install WebDriver
+      - name: Set up ChromeDriver
         run: |
-          sudo apt-get update
-          sudo apt-get install chromium-driver
+          LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
+          unzip chromedriver_mac64.zip
+          sudo mv chromedriver /opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages
+          chromedriver --version
+
+#       - name: Install WebDriver
+#         run: |
+#           sudo apt-get update
+#           sudo apt-get install chromium-driver
           
       - name: Run Python tests
         run: |
           ls
-          python checkout.py
+          python3 checkout.py
 
 #       - name: Run Selenium tests
 #         run: |
