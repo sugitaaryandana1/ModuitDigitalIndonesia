@@ -1,10 +1,10 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
 # Main Function
-if __name__ == '__main__' :
+if __name__ == '__main__':
 
 	options = webdriver.ChromeOptions()
 	options.add_argument("--start-maximized")
@@ -12,8 +12,8 @@ if __name__ == '__main__' :
 
 	# Provide the path of chromedriver present on your system.
 	# driver = webdriver.Chrome('/usr/local/bin/chromedriver') 
-	driver = webdriver.Chrome(ChromeDriverManager().install())
-	# driver = webdriver.Chrome()
+	# driver = webdriver.Chrome(ChromeDriverManager().install())
+	driver = webdriver.Chrome()
 	driver.set_window_size(480,360)
 	driver.maximize_window()
 
