@@ -47,6 +47,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
+      - name: Install Chromium and Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install chromium-chromedriver
+          
       - name: execute py script # run main.py
         run: pytest checkout.py
           
@@ -57,11 +62,6 @@ jobs:
           
 #       - name: Checkout code
 #         uses: actions/checkout@v3
-        
-#       - name: Install Chromium and Chromedriver
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install chromium-chromedriver
 
 #       - name: Set up ChromeDriver
 #         run: |
