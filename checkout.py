@@ -11,8 +11,7 @@ if __name__ == '__main__':
 	options.add_argument('--log-level=3')
 
 	# Provide the path of chromedriver present on your system.
-	driver = webdriver.Chrome(executable_path="chromedriver",
-                              chrome_options=options)
+	driver = webdriver.Chrome(executable_path="chromedriver", chrome_options=options)
 	# driver = webdriver.Chrome(ChromeDriverManager().install())
 	# driver = webdriver.Chrome()
 	driver.set_window_size(480,360)
