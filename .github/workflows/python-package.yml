@@ -49,4 +49,4 @@ jobs:
         brew install cask chromedriver
     - name: Run
       run: |
-        python3 login.py
+        python3 checkout.py
