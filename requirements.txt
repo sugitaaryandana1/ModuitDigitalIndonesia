@@ -5,3 +5,13 @@ webdriver-manager
 pytest-html
 allure-pytest
 requests==2.28.1
+attrs==20.1.0
+importlib-metadata==1.7.0
+iniconfig==1.0.1
+more-itertools==8.4.0
+packaging==20.4
+pluggy==0.13.1
+pyparsing==2.4.7
+six==1.15.0
+toml==0.10.1
+zipp==3.1.0
