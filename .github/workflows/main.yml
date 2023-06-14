@@ -65,7 +65,7 @@ jobs:
           
       - name: Run Python tests
         run: |
-          export PATH=$PATH:"./"
+          ls
           python checkout.py
 
 #       - name: Run Selenium tests
