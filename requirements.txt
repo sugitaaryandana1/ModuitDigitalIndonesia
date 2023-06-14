@@ -1,1 +1,6 @@
-selenium
+pytest             
+python-dotenv      
+selenium           
+webdriver-manager
+pytest-html
+allure-pytest
