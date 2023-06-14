@@ -57,7 +57,7 @@ jobs:
 
       - name: Run Selenium tests
         run: |
-          python -m checkout.py
+          python -m checkout
           
 #       - name: Run WebDriver Manager
 #         run: |
