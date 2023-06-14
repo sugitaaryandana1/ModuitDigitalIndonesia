@@ -53,7 +53,7 @@ jobs:
           sudo apt-get install chromium-chromedriver
           
       - name: execute py script # run main.py
-        run: python -m checkout.py
+        run: python -m checkout
           
 #       - name: Install dependencies
 #         run: |
