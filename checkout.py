@@ -5,7 +5,6 @@ import time
 
 # Main Function
 if __name__ == '__main__':
-	driver = webdriver.Chrome(executable_path="LICENSE.chromedriver", chrome_options=options)
 	options = webdriver.ChromeOptions()
 	options.add_argument("--start-maximized")
 	options.add_argument('--log-level=3')
@@ -13,6 +12,7 @@ if __name__ == '__main__':
 	# Provide the path of chromedriver present on your system.
 	# driver = webdriver.Chrome(ChromeDriverManager().install())
 	# driver = webdriver.Chrome()
+	driver = webdriver.Chrome(executable_path="LICENSE.chromedriver", chrome_options=options)
 	driver.set_window_size(480,360)
 	driver.maximize_window()
 
