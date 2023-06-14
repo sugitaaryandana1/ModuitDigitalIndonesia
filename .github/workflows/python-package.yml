@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       fail-fast: false
       matrix:
@@ -48,4 +48,4 @@ jobs:
           sudo apt-get install chromium-chromedriver
     - name: Run
       run: |
-        pytest login.py --browser=chrome --headless -v -s
+        pytest login.py --browser=chrome
