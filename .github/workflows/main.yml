@@ -48,7 +48,9 @@ jobs:
           pip install -r requirements.txt
           
       - name: execute py script # run main.py
-        run: pytest login.py
+        run: |
+          ls
+          pytest
           
 #       - name: Install dependencies
 #         run: |
