@@ -38,13 +38,14 @@ jobs:
     - name: Install Chrome
       run: |
         sudo apt install google-chrome-stable
-    - name: Install chromedriver
+    - name: Install dependencies
       run: |
-        seleniumbase install chromedriver
-    - name: Make sure pytest is working
+        python -m pip install --upgrade pip
+        pip install selenium
+    - name: Install Chromium and Chromedriver
       run: |
-        echo "def test_1(): pass" > login.py
-        pytest login.py
+          sudo apt-get update
+          sudo apt-get install chromium-chromedriver
     - name: Run pytest examples/unit_tests/verify_framework.py --browser=chrome --headless
       run: |
         pytest login.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
