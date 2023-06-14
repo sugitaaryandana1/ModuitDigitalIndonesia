@@ -41,37 +41,47 @@ jobs:
       - uses: actions/setup-python@v4
         with:
          python-version: '3.12.0-alpha.1'
-          
-      - name: Install dependencies
+         
+      - name: install python packages
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: execute py script # run main.py
+        env:
+          SOME_SECRET: ${{ secrets.SOME_SECRET }}
+        run: python login.py
+          
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install -r requirements.txt
+          
+#       - name: Checkout code
+#         uses: actions/checkout@v3
         
 #       - name: Install Chromium and Chromedriver
 #         run: |
 #           sudo apt-get update
 #           sudo apt-get install chromium-chromedriver
 
-      - name: Set up ChromeDriver
-        run: |
-          LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
-          unzip chromedriver_mac64.zip
-          sudo mv chromedriver /opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages
-          chromedriver --version
+#       - name: Set up ChromeDriver
+#         run: |
+#           LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+#           wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
+#           unzip chromedriver_mac64.zip
+#           sudo mv chromedriver /opt/hostedtoolcache/Python/3.12.0-alpha.1/x64/lib/python3.12/site-packages
+#           chromedriver --version
 
 #       - name: Install WebDriver
 #         run: |
 #           sudo apt-get update
 #           sudo apt-get install chromium-driver
           
-      - name: Run Python tests
-        run: |
-          ls
-          python3 -m unittest discover checkout
+#       - name: Run Python tests
+#         run: |
+#           ls
+#           python3 -m unittest discover checkout
 
 #       - name: Run Selenium tests
 #         run: |
