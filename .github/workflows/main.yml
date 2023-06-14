@@ -50,10 +50,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Install Chromium and Chromedriver
+#       - name: Install Chromium and Chromedriver
+#         run: |
+#           sudo apt-get update
+#           sudo apt-get install chromium-chromedriver
+
+      - name: Set up ChromeDriver
         run: |
-          sudo apt-get update
-          sudo apt-get install chromium-chromedriver
+          LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
+          unzip chromedriver_mac64.zip
+          sudo mv chromedriver /usr/local/bin/
+          chromedriver --version
           
       - name: Run Python tests
         run: |
