@@ -20,6 +20,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install Newman
+      run: npm install -g newman
+    - name: Run Postman collection
+      run: newman run testing.postman_collection.json
+    - name: Checkout code
+      uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
