@@ -1,5 +1,7 @@
 # ModuitDigitalIndonesia
 Task result for TAKE HOME TEST
+# Guide Check Workflow
+1. search directory .github/workflows click python-package.yml
 # Step By Step How to Install Selenium Using Pyhton.
 1. first you can install pyhton in selenium, you can try link this https://www.geeksforgeeks.org/how-to-install-selenium-on-macos/
 2. you must using chromedriver, you can download link this https://chromedriver.chromium.org/downloads
