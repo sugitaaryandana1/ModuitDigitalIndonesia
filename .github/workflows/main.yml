@@ -58,7 +58,7 @@ jobs:
       - name: Run Python tests
         run: |
           export PATH=$PATH:/usr/lib/chromium-browser/
-          python checkout.py
+          python checkout
 
 #       - name: Run Selenium tests
 #         run: |
