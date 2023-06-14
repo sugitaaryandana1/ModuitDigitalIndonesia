@@ -37,7 +37,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics    
     - name: Install selenium
       run: |
-          pip install selenium
+          pip install selenium==4.1.0
     - name: install python
       run: |
         brew install python
