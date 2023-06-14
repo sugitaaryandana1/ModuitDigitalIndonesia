@@ -60,12 +60,12 @@ jobs:
           LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
           wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_mac64.zip
           unzip chromedriver_mac64.zip
-          sudo mv chromedriver ./
+          sudo mv chromedriver /ModuitDigitalIndonesia
           chromedriver --version
           
       - name: Run Python tests
         run: |
-          export PATH=$PATH:"/ModuitDigitalIndonesia"
+          export PATH=$PATH:"./"
           python checkout.py
 
 #       - name: Run Selenium tests
